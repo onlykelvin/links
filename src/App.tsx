@@ -8,10 +8,16 @@ import { useLinks } from './hooks/useLinks';
 import { useFavorites } from './hooks/useFavorites';
 import { useThemeManager } from './hooks/useThemeManager';
 import type { LayoutMode } from './types/theme';
+import { useEffect } from 'react';
 
 type Tab = 'all' | 'favorites';
 
 function App() {
+
+    useEffect(() => {
+    window.insidee?.init("f7a98da7-79ba-46ee-a996-da3240324847");
+  }, []);
+    
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState<Tab>('all');
   const [layout, setLayout] = useState<LayoutMode>('grid');
